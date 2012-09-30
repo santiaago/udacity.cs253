@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+
+  <title>CS 253 Wiki</title>
+</head>
+<body>
+    <a href="/wiki" class="main-title">Wiki</a>
+    {{navigation.render() | safe}}
+    <div class="wiki-heading">
+        <div class="wiki-date">
+          {{page.created.strftime("%b %d, %Y")}}
+        </div>
+    </div>
+    <div class="wiki-content" id="content">
+        {{page.render() | safe}}
+    </div>
+    <div class="wiki-time">Last queried was: {{cache_last_query.hour}} hours {{cache_last_query.minute}} minutes and {{cache_last_query.second}} seconds ago</div>
+    
+</body>
+
+</html>

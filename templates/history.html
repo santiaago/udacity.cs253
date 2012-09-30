@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+
+  <title>CS 253 Wiki</title>
+</head>
+<body>
+    <a href="/wiki" class="main-title">Wiki</a>
+    {{navigation.render() | safe}}
+    
+    {% for page_version in page_versions %}
+    <div  class="version-date">{{page_version.render_time()}}</div>
+    <div class="version-content">{{page_version.render()}}</div>
+    <div class="version-links">
+        <a href="/wiki{{current_url}}?v={{page_version.version_number}}">view</a></div>
+    <br><br>
+    {% endfor %}
+</body>
+
+</html>

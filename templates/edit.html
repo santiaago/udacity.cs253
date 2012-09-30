@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/static/main.css" />
+    <title>Blog</title>
+</head>
+
+<body>
+    <a href="/wiki" class="main-title">Wiki</a>
+    {{navigation.render() | safe}}
+
+<div class="container">
+
+    <form method="post">
+	    <label>
+	        <div>edit page</div>
+       	    <textarea rows=20 name="content">{{content}}</textarea>
+	    </label>
+	    <br>
+	    <input type="submit">
+    </form>
+</div>
+</body>
+
+</html>
